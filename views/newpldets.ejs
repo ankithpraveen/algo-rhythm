@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./mdb/js/mdb.min.js"></script>
+  <link href="./mdb/css/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="newpldets.js"></script>
+  <head><title id="title">Algo-Rhythm</title></head>
+  <body id="bg">
+
+    <div class="bg-image" style="
+          background-image: linear-gradient(rgb(0, 0, 0), rgb(37, 37, 37));
+          height: 100vh;
+        ">
+  
+
+
+  <!-- Navbar -->
+  <!-- Container wrapper -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style="color: white" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color: rgb(54, 176, 233)" href="/library"> My Library</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white" href="/newSong">Upload New Song</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <!-- <div class="d-flex align-items-center">
+        <form class="d-flex" style="padding-right: 5%">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" type="text"
+            class="form-control" onkeyup="dynamic_search(event)" onclick="getSongs()" id="sname" value="" />
+        </form> -->
+      <!-- Avatar -->
+      <a style="padding-right: 0.75%" class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-user fa-lg"></i>
+        <!-- <img
+              src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+              class="rounded-circle"
+              height="40"
+              alt=""
+              loading="lazy"
+            /> -->
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+        <li>
+          <span class="dropdown-item-text" href="#"><%=name%></span>
+        </li>
+        <li>
+          <span class="dropdown-item-text" href="#"><%=email%></span>
+        </li>
+        <li>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Right elements -->
+
+    <!-- Container wrapper -->
+  </nav>
+
+  <!-- Navbar -->
+
+
+    <div id="body">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="container" style="margin: 20px;margin-right: 20px;">
+            <h4 style="color:white">Create New Playlist</h4>
+            <div class="row" id="pls">
+
+              <form method="#" onsubmit="newplaylist(0,0);return false;">
+                <div class="form-outline mb-4">
+                  <input type="text" id="plname"
+                    style="border: 1px solid white; width:100%; border-radius:3px; padding-left:5px;"
+                    placeholder="Playlist Name" class="" required>
+                </div>
+                <div class="form-outline mb-4">
+                  <input placeholder="Song Name" type="text" onkeyup="dynamic_search(event)" onclick="getSongs()"
+                    id="sname" value=""
+                    style="border: 1px solid white; width:100%; border-radius:3px; padding-left:5px;" />
+
+                </div>
+                  <button type="submit" style="width:100%;" class="btn btn-primary btn-block" >Create</button>
+                  <br><br>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8" style="padding-top:2%;">
+          <div class="row">
+          <div class="col-sm-5" style="padding-left:5%;">
+            <table class="table align-middle table-responsive-md">
+              <tbody id="tsugg">
+
+              </tbody>
+            </table>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+
+              <table class="table align-middle table-responsive-md">
+                <tbody id="tadded">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div><br><br>
+    </div>
+</body>
+
+
+</html>

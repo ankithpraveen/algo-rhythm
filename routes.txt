@@ -1,0 +1,5 @@
+"/"-->login
+"/dashboard"-->trending songs, search bar(dynamic search), logo
+"/library"-->playlist(create new playlist), history
+"/myaccount"-->account management
+"/uploadSong"-->upload song (default playlist=myUploadedSongs)
