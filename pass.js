@@ -9,7 +9,7 @@ passport.serializeUser(function (user, cb) {
 
 /* MongoDB connection */
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://ankith:anki@algo-rhythm@cluster0.op31g4e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://ankith:" + process.env.MONGO_CLUSTER_PASSWORD + "@cluster0.op31g4e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const dbName = "test";
 
 passport.deserializeUser(function (emailid, cb) {
@@ -41,7 +41,7 @@ const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://algo-rhythm-p1j5.onrender.com/auth/google/callback",
+    callbackURL: "http://localhost:3000/auth/google/callback",
     proxy: true
 },
     function (accessToken, refreshToken, profile, done) {

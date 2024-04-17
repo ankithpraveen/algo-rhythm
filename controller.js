@@ -1,10 +1,11 @@
+require('dotenv').config();
 const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 
 const { MongoClient } = require('mongodb');
 var mongo = require('mongodb');
-const uri = "mongodb+srv://ankith:anki@algo-rhythm@cluster0.op31g4e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://ankith:" + process.env.MONGO_CLUSTER_PASSWORD + "@cluster0.op31g4e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const dbName = "test";
 const ObjectId = require('mongodb').ObjectId;
 
